@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+    <title>Tic-Tac-Toe</title>
+    <script type="text/javascript">
+        var count=1;
+        var x=0;
+        function fun(control)
+        {
+            
+            if(x==1)
+           {
+            alert("Match Over");
+            reset();
+           }
+            if(count<=9)
+            {
+                if(count%2==0)
+                 {
+                document.getElementById(control.id).innerHTML="X";
+                if(checker())
+                 {
+                     alert("winn  X");
+                     x=1;
+                 }
+                }
+            else{
+                document.getElementById(control.id).innerHTML="O";
+                if(checker())
+                {
+                   alert("winn  O");
+                   x=1;
+                }
+                }
+                count++;
+                
+            }
+            else
+            {
+                alert("Match Over");
+                reset();
+            }
+       
+             
+           
+           
+        }
+        function reset()
+        {
+                for(var i=1;i<=9;i++)
+                {
+                    document.getElementById("div"+i).innerHTML="";
+                }
+        }
+
+        function checker()
+        {
+            if(document.getElementById("div1").innerHTML!="" && document.getElementById("div2").innerHTML!="" && document.getElementById("div3").innerHTML!="" && 
+            document.getElementById("div1").innerHTML== document.getElementById("div2").innerHTML && document.getElementById("div2").innerHTML==document.getElementById("div3").innerHTML)
+            {
+                return true;
+            }
+
+            if(document.getElementById("div4").innerHTML!="" && document.getElementById("div5").innerHTML!="" && document.getElementById("div6").innerHTML!="" && 
+            document.getElementById("div4").innerHTML== document.getElementById("div5").innerHTML && document.getElementById("div5").innerHTML==document.getElementById("div6").innerHTML)
+            {
+                return true;
+            }
+
+            if(document.getElementById("div7").innerHTML!="" && document.getElementById("div8").innerHTML!="" && document.getElementById("div9").innerHTML!="" && 
+            document.getElementById("div7").innerHTML== document.getElementById("div8").innerHTML && document.getElementById("div8").innerHTML==document.getElementById("div9").innerHTML)
+            {
+                return true;
+            }
+
+            if(document.getElementById("div1").innerHTML!="" && document.getElementById("div4").innerHTML!="" && document.getElementById("div7").innerHTML!="" && 
+            document.getElementById("div1").innerHTML== document.getElementById("div4").innerHTML && document.getElementById("div7").innerHTML==document.getElementById("div4").innerHTML)
+            {
+                return true;
+            }
+
+            if(document.getElementById("div2").innerHTML!="" && document.getElementById("div5").innerHTML!="" && document.getElementById("div8").innerHTML!="" && 
+            document.getElementById("div2").innerHTML== document.getElementById("div5").innerHTML && document.getElementById("div5").innerHTML==document.getElementById("div8").innerHTML)
+            {
+                return true;
+            }
+            
+            if(document.getElementById("div3").innerHTML!="" && document.getElementById("div6").innerHTML!="" && document.getElementById("div9").innerHTML!="" && 
+            document.getElementById("div3").innerHTML== document.getElementById("div6").innerHTML && document.getElementById("div6").innerHTML==document.getElementById("div9").innerHTML)
+            {
+                return true;
+            }
+
+            if(document.getElementById("div1").innerHTML!="" && document.getElementById("div5").innerHTML!="" && document.getElementById("div9").innerHTML!="" && 
+            document.getElementById("div1").innerHTML== document.getElementById("div5").innerHTML && document.getElementById("div5").innerHTML==document.getElementById("div9").innerHTML)
+            {
+                return true;
+            }
+
+            if(document.getElementById("div7").innerHTML!="" && document.getElementById("div3").innerHTML!="" && document.getElementById("div5").innerHTML!="" && 
+            document.getElementById("div7").innerHTML== document.getElementById("div3").innerHTML && document.getElementById("div3").innerHTML==document.getElementById("div5").innerHTML)
+            {
+                return true;
+            }
+
+
+        }
+
+
+
+
+    </script>
+    <style type="text/css">
+        *{
+            background-color: antiquewhite;
+        }
+        #ii{
+            margin-left: 200px;
+            padding-bottom: 25px;
+        }
+            #div1,#div2,#div3,#div4,#div5,#div6,#div7,#div8,#div9{
+                border: 1px solid black;
+                height: 200px;
+                width: 200px;
+                float: left;
+                font-size: 180px;
+                text-align: center;
+            }
+            #div1,#div4,#div7{
+                clear: left;
+                border-left: none;
+            }
+            #main{
+                margin-left: 350px;
+                margin-top: 50px;
+            }
+            #div3,#div6,#div9{
+                border-right: none;
+            }
+            #div1,#div2,#div3{
+                border-top: none;
+            }
+            #div7,#div8,#div9{
+                border-bottom: none;
+            }
+    </style>
+    </head>
+    <body>
+        
+        <div id="main">
+            <h1 id="ii">Tic-Tac-Toe<br></h1>
+            <div id="div1" onclick="fun(this)"></div>
+            <div id="div2" onclick="fun(this)"></div>
+            <div id="div3" onclick="fun(this)"></div>
+            <div id="div4" onclick="fun(this)"></div>
+            <div id="div5" onclick="fun(this)"></div>
+            <div id="div6" onclick="fun(this)"></div>
+            <div id="div7" onclick="fun(this)"></div>
+            <div id="div8" onclick="fun(this)"></div>
+            <div id="div9" onclick="fun(this)"></div>
+        </div>
+    </body>
+</html>
